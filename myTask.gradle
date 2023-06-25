@@ -1,0 +1,37 @@
+task t1 {
+    println ("This is task configuration...")
+    doFirst {
+        println("Run doFisrt method.")
+    }
+    doLast {
+        println "Run doLast method."
+    }
+}
+
+task t2 {
+    println "Run t2 task."
+}
+
+t1.dependsOn t2
+
+class MyTask extends DefaultTask {
+    @TaskAction
+    def t1 () {
+        println "My personal task 1"
+    }
+
+    @TaskAction
+    def t2 () {
+        println "My personal task 2"
+    }
+}
+
+task myTask (type: MyTask) {
+    println ("Run my task configuration...")
+    doFirst {
+        println("Run my task doFisrt method.")
+    }
+    doLast {
+        println "Run my task doLast method."
+    }
+}
