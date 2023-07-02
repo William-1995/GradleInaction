@@ -1,9 +1,16 @@
+// plugins
 plugins {
     id 'groovy'
     id 'java-library'
 }
+
 group = 'com.learning'
 version = '0.1'
+
+// Config the gradle wrapper ./gradlew  wrapper
+tasks.withType(Wrapper, {
+  gradleVersion='8.2'
+})
 
 repositories {
     mavenCentral()
@@ -15,7 +22,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
-//apply from: "myTask.gradle"
+apply from: "myTask.gradle"
 
 //allprojects {
 //    apply plugin:'java-library'
