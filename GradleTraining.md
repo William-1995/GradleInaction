@@ -124,3 +124,27 @@ EmailDsl.make {
     body " Hello groovy DSL "
 }
 ```
+# Gradle
+## Fundamentals
+### Init Gradle
+A settings.gradle file is used to config a root/parent project.
+### Gradle Wrapper
+The Wrapper is a script that invokes a declared version of Gradle, downloading it beforehand if necessary.
+[Official documentation](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
+- A gradlew script in the Linux OS
+- A gradlew.bat script in the Window OS
+- Under root project's gradle/wrapper folder, which includes the configuration and a jar to run a JVM application.
+### Gradle Deamon
+[Official documentation](https://docs.gradle.org/current/userguide/gradle_daemon.html)
+## Build Gradle Project
+### Build Script
+A build script is the current build.gradle's configuration.
+### Task
+A Task represents a single atomic piece of work for a build, such as compiling classes or generating javadoc.
+[Official documentation](https://docs.gradle.org/current/dsl/org.gradle.api.Task.html)
+### Plugin
+A couple of reusable tasks.
+### Project
+- Project
+- All Projects
+- Sub Projects
