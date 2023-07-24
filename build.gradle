@@ -12,6 +12,9 @@
 plugins {
     id 'groovy'
     id 'java-library'
+
+    id 'org.springframework.boot' version '3.1.2'
+    id 'io.spring.dependency-management' version '1.1.2'
 }
 
 //println com.jayway.jsonpath.JsonPath.JsonPath.parse(Map.of("k", "v"))
@@ -28,6 +31,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
     implementation 'org.apache.groovy:groovy:4.0.2'
     // Declares a dependency on a platform. If the target coordinates represent multiple potential components, the platform component will be selected, instead of the library.
     testImplementation platform('org.junit:junit-bom:5.9.1')
@@ -65,4 +70,16 @@ apply from: "myTask.gradle"
 
 test {
     useJUnitPlatform()
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 4, 'hours'
+}
+
+//tasks.withType(Test).configureEach {
+//    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+//}
+
+tasks.withType(BuildType).configureEach {
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
