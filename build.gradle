@@ -1,3 +1,4 @@
+import java.time.Instant
 //buildscript {
 //    repositories {
 //        mavenCentral()
@@ -15,6 +16,7 @@ plugins {
 
     id 'org.springframework.boot' version '3.1.2'
     id 'io.spring.dependency-management' version '1.1.2'
+    id "com.google.cloud.tools.jib" version "3.3.2"
 }
 
 //println com.jayway.jsonpath.JsonPath.JsonPath.parse(Map.of("k", "v"))
@@ -37,6 +39,7 @@ dependencies {
     // Declares a dependency on a platform. If the target coordinates represent multiple potential components, the platform component will be selected, instead of the library.
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.4.0'
 }
 
 apply from: "myTask.gradle"
@@ -68,7 +71,7 @@ apply from: "myTask.gradle"
 //    }
 //}
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
 }
 
@@ -83,3 +86,51 @@ configurations.all {
 tasks.withType(BuildType).configureEach {
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
+
+java {
+    sourceCompatibility(JavaVersion.VERSION_17)
+    targetCompatibility(JavaVersion.VERSION_17)
+}
+
+
+// Make sure the build task dependent on the jib's execution result.
+tasks {
+    build {
+        dependsOn(tasks.jib)
+    }
+}
+
+jib{
+// If need.
+//    from {
+//
+//    }
+    to {
+        image = "willl1995/jib:latest"
+        tags = ['latest']
+        auth {
+            username="willl1995"
+            password="lxx950430"
+        }
+    }
+// Container configuration.
+    container {
+        mainClass="com.gradle.demo.SpringBootApplication"
+        jvmFlags = [
+                "-server",
+                "-Duser.timezone=UTC",
+                "-Xms128m",
+                "-Xmx1g"]
+        args = []
+        creationTime = Instant.now().toString()
+        ports = ['8080']
+        format = com.google.cloud.tools.jib.api.buildplan.ImageFormat.OCI
+    }
+    targetCompatibility = 17
+}
+
+/**
+ * Run docker commands to start the jib.
+ *  1. docker pull willl1995/jib:latest
+ *  2. docker run -p 8080:8080 --name jib-demo willl1995/jib
+ */
