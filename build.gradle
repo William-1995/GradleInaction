@@ -131,6 +131,11 @@ jib{
 
 /**
  * Run docker commands to start the jib.
- *  1. docker pull willl1995/jib:latest
- *  2. docker run -p 8080:8080 --name jib-demo willl1995/jib
+ *  1. ./gradlew clean build -x test jib
+ *  2. docker pull willl1995/jib:latest
+ *  3. docker run -p 8080:8080 --name jib-demo willl1995/jib
+ *
+ * Run docker commands to start the jib (Not push to remote)
+ *  1. ./gradlew clean build -x test jibDockerBuild
+ *  2.docker run -p 8080:8080 --name jib-demo willl1995/jib
  */
