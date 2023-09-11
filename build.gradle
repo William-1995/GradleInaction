@@ -110,7 +110,7 @@ jib{
         tags = ['latest']
         auth {
             username="willl1995"
-            password="lxx950430"
+            password="<password>"
         }
     }
 // Container configuration.
@@ -138,4 +138,13 @@ jib{
  * Run docker commands to start the jib (Not push to remote)
  *  1. ./gradlew clean build -x test jibDockerBuild
  *  2.docker run -p 8080:8080 --name jib-demo willl1995/jib
+ *
+ * Push to personal docker repository
+ * 1. Set [allowInsecureRegistries = true]
+ * 2. Remove auth
+ * 3. Create personal docker repository
+ *      docker run -d -p 5000:5000 --name registry
+ *      http://localhost:5000/v2/_catalog
+ * 4. ./gradlew clean build -x test jib
+ * 5. docker run -p 8080:8080 --name jib localhost:5000/jib
  */
