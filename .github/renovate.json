@@ -19,15 +19,15 @@
       ":automergeDisabled",
       ":enableVulnerabilityAlerts"
     ],
-    "regexManagers": [
-      {
-          "fileMatch": [
-              "^.*Dockerfile$",
-              "\\.tf$"
-          ],
-          "matchStrings": [
-            "renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( packageName=(?<packageName>.*?))?( registryUrl=(?<registryUrl>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV .*?_VERSION=|\\s*?default\\s*?=\\s*?\")(?<currentValue>.*?)\"?\\s"
-          ]
-      }
-    ]
+    {
+        "fileMatch": [
+            "\\.gradle(\\.kts)?$",
+            "(^|/)gradle\\.properties$",
+            "(^|/)gradle/.+\\.toml$",
+            "(^|/)buildSrc/.+\\.kt$",
+            "\\.versions\\.toml$",
+            "(^|/)versions.props$",
+            "(^|/)versions.lock$"
+        ]
+    }
   }
