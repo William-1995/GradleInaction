@@ -3,11 +3,16 @@
     "baseBranches": [
       "master"
     ],
-    {
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
       "commitMessageTopic": "{{depName}}"
+    }
+  ],
+   "packageRules": [
+    {
+      "matchCurrentVersion": ">=1.0.0",
+      "matchPackageNames": ["angular"]
     }
   ]
 }
