@@ -1,14 +1,9 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "assignees": ["William1995"],
     "baseBranches": [
       "master"
     ],
-    "dependencyDashboardAutoclose":true,
     "branchConcurrentLimit":0
-    "dependencyDashboardLabels": [
-      "bot::renovate"
-    ],
     "extends": [
       "config:recommended",
       ":prHourlyLimitNone",
