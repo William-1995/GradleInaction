@@ -4,13 +4,6 @@
       "master"
     ],
     "branchConcurrentLimit":0,
-    "extends": [
-      "config:recommended",
-      ":prHourlyLimitNone",
-      ":prConcurrentLimitNone",
-      ":automergeDisabled",
-      ":enableVulnerabilityAlerts"
-    ],
     "regexManagers": [
         {
             "fileMatch": [
