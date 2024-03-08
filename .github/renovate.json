@@ -5,8 +5,8 @@
     ],
   "packageRules": [
       {
-      "matchCurrentVersion": ">=17",
-      "matchPackageNames": ["angular"]
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
     }
   ]
 }
