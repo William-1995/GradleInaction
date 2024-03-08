@@ -1,0 +1,37 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "assignees": [],
+    "baseBranches": [
+      "master"
+    ],
+    "labels": [
+      "bot::renovate",
+      "type::maintenance"
+    ],
+    "gitNoVerify": [],
+    "dependencyDashboardAutoclose":true,
+    "dependencyDashboardLabels": [
+      "bot::renovate"
+    ],
+    "hostRules": [
+    ],
+    "extends": [
+      "config:recommended",
+      ":prHourlyLimitNone",
+      ":prConcurrentLimitNone",
+      ":automergeDisabled",
+      ":enableVulnerabilityAlerts"
+    ],
+    "platform": "github",
+    "regexManagers": [
+      {
+          "fileMatch": [
+              "^.*Dockerfile$",
+              "\\.tf$"
+          ],
+          "matchStrings": [
+            "renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( packageName=(?<packageName>.*?))?( registryUrl=(?<registryUrl>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV .*?_VERSION=|\\s*?default\\s*?=\\s*?\")(?<currentValue>.*?)\"?\\s"
+          ]
+      }
+    ]
+  }
