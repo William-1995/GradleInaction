@@ -3,7 +3,7 @@
     "baseBranches": [
       "master"
     ],
-    "branchConcurrentLimit":0
+    "branchConcurrentLimit":0,
     "extends": [
       "config:recommended",
       ":prHourlyLimitNone",
