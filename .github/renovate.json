@@ -19,7 +19,7 @@
       ":automergeDisabled",
       ":enableVulnerabilityAlerts"
     ],
-    {
+     {
         "fileMatch": [
             "\\.gradle(\\.kts)?$",
             "(^|/)gradle\\.properties$",
