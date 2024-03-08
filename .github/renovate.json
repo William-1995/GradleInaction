@@ -4,12 +4,8 @@
       "master"
     ],
   "packageRules": [
-    {
-      "matchManagers": ["github-actions"],
-      "commitMessageTopic": "{{depName}}"
-    },
       {
-      "matchCurrentVersion": ">=1.0.0",
+      "matchCurrentVersion": ">=17",
       "matchPackageNames": ["angular"]
     }
   ]
