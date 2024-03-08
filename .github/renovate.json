@@ -8,7 +8,6 @@
       "bot::renovate",
       "type::maintenance"
     ],
-    "gitNoVerify": [],
     "dependencyDashboardAutoclose":true,
     "dependencyDashboardLabels": [
       "bot::renovate"
