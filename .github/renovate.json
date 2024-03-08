@@ -19,15 +19,17 @@
       ":automergeDisabled",
       ":enableVulnerabilityAlerts"
     ],
-     {
-        "fileMatch": [
-            "\\.gradle(\\.kts)?$",
-            "(^|/)gradle\\.properties$",
-            "(^|/)gradle/.+\\.toml$",
-            "(^|/)buildSrc/.+\\.kt$",
-            "\\.versions\\.toml$",
-            "(^|/)versions.props$",
-            "(^|/)versions.lock$"
-        ]
-    }
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "\\.gradle(\\.kts)?$",
+                "(^|/)gradle\\.properties$",
+                "(^|/)gradle/.+\\.toml$",
+                "(^|/)buildSrc/.+\\.kt$",
+                "\\.versions\\.toml$",
+                "(^|/)versions.props$",
+                "(^|/)versions.lock$"
+            ]
+        }   
+    ]
   }
