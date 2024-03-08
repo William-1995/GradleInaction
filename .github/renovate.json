@@ -4,11 +4,8 @@
     "baseBranches": [
       "master"
     ],
-    "labels": [
-      "bot::renovate",
-      "type::maintenance"
-    ],
     "dependencyDashboardAutoclose":true,
+    "branchConcurrentLimit":0
     "dependencyDashboardLabels": [
       "bot::renovate"
     ],
