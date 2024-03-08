@@ -29,7 +29,8 @@
                 "\\.versions\\.toml$",
                 "(^|/)versions.props$",
                 "(^|/)versions.lock$"
-            ]
+            ],
+            "matchStrings": ["*"]
         }   
     ]
   }
