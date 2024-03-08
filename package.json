@@ -1,0 +1,23 @@
+{
+    "name": "test-ui",
+    "version": "4.0.0",
+    "config": {
+        "proxy_environment": "local",
+        "config_environment": "local",
+        "params": ""
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "start:proxy@linux": "ng serve --proxy-config ./local-test/proxy.$npm_package_config_proxy_environment.conf.js --configuration=$npm_package_config_config_environment --poll 100",
+        "start:proxy@windows": "ng serve --proxy-config ./local-test/proxy.%npm_package_config_proxy_environment%.conf.js --configuration=%npm_package_config_config_environment% --poll 100",
+        "build": "ng build --configuration=$npm_package_config_config_environment $npm_package_config_params",
+    },
+    "dependencies": {
+        "xlsx": "0.17.4",
+    },
+    "devDependencies": {
+    },
+    "resolutions": {
+    }
+}
