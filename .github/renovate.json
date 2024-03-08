@@ -1,24 +1,3 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "baseBranches": [
-      "master"
-    ],
-    "branchConcurrentLimit":0,
-    "regexManagers": [
-        {
-            "fileMatch": [
-                "\\.build.gradle?$",
-                "\\.gradle(\\.kts)?$",
-                "(^|/)gradle\\.properties$",
-                "(^|/)gradle/.+\\.toml$",
-                "(^|/)buildSrc/.+\\.kt$",
-                "\\.versions\\.toml$",
-                "(^|/)versions.props$",
-                "(^|/)versions.lock$"
-            ],
-            "matchStrings": [
-                    "renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( packageName=(?<packageName>.*?))?( registryUrl=(?<registryUrl>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV .*?_VERSION=|\\s*?default\\s*?=\\s*?\")(?<currentValue>.*?)\"?\\s"
-            ]
-        }   
-    ]
-  }
+
+}
