@@ -3,13 +3,15 @@
     "baseBranches": [
       "master"
     ],
-  "fileMatch": [
-    "\\.gradle(\\.kts)?$",
-    "(^|/)gradle\\.properties$",
-    "(^|/)gradle/.+\\.toml$",
-    "(^|/)buildSrc/.+\\.kt$",
-    "\\.versions\\.toml$",
-    "(^|/)versions.props$",
-    "(^|/)versions.lock$"
+     "customManagers": [
+    {
+      "fileMatch": ["^myTask.gradle$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "\"test\":\\s*\\{[^}]*}",
+        "\"name\":\\s*\"(?<depName>.*)\"[^\"]*\"type\":\\s*\"(?<datasource>.*)\"[^\"]*\"value\":\\s*\"(?<currentValue>.*)\""
+      ],
+      "datasourceTemplate": "gradle"
+    }
   ]
 }
