@@ -5,7 +5,7 @@
     ],
   "packageRules": [
       {
-      "matchDatasources": ["gradle"],
+      "matchDatasources": ["^build.gradle$"],
       "minimumReleaseAge": "3 days"
     }
   ]
