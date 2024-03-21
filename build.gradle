@@ -30,9 +30,13 @@ tasks.withType Wrapper, { gradleVersion='8.6'}
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://gitlab.com/api/v4/projects/45430684/packages/maven"
+    }
 }
 
 dependencies {
+    implementation "de.elvah.plugin:platform-repository-plugin:1.0.2-SNAPSHOT"
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     implementation 'org.apache.groovy:groovy:4.0.2'
