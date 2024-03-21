@@ -3,7 +3,7 @@
     "baseBranches": [
       "master"
     ],
-    "packageRules" :[
+    "packageRules" : [
       {
         "matchSourceUrlPrefixes": [
           "https://gitlab.com/api/v4/projects/45430684/packages/maven"
@@ -11,4 +11,5 @@
         "automerge": true
       }
     ]
+
 }
