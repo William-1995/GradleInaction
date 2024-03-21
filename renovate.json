@@ -3,15 +3,12 @@
     "baseBranches": [
       "master"
     ],
-     "customManagers": [
-    {
-      "fileMatch": ["^myTask.gradle$"],
-      "matchStringsStrategy": "any",
-      "matchStrings": [
-        "\"test\":\\s*\\{[^}]*}",
-        "\"name\":\\s*\"(?<depName>.*)\"[^\"]*\"type\":\\s*\"(?<datasource>.*)\"[^\"]*\"value\":\\s*\"(?<currentValue>.*)\""
-      ],
-      "datasourceTemplate": "gradle"
-    }
-  ]
+    "packageRules" :[
+      {
+        "matchSourceUrlPrefixes": [
+          "https://gitlab.com/api/v4/projects/45430684/packages/maven"
+        ],
+        "automerge": true
+      }
+    ]
 }
