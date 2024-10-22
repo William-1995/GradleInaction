@@ -41,7 +41,7 @@ dependencies {
 
     implementation 'org.apache.groovy:groovy:4.0.2'
     // Declares a dependency on a platform. If the target coordinates represent multiple potential components, the platform component will be selected, instead of the library.
-    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation platform('org.junit:junit-bom:5.11.3')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.4.0'
 }
