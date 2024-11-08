@@ -39,7 +39,7 @@ dependencies {
     implementation "de.elvah.plugin:platform-repository-plugin:1.0.2-SNAPSHOT"
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    implementation 'org.apache.groovy:groovy:4.0.2'
+    implementation 'org.apache.groovy:groovy:4.0.24'
     // Declares a dependency on a platform. If the target coordinates represent multiple potential components, the platform component will be selected, instead of the library.
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
