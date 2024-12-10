@@ -135,6 +135,7 @@ jib{
     targetCompatibility = 21
 }
 
+
 /**
  * Run docker commands to start the jib.
  *  1. ./gradlew clean build -x test jib
